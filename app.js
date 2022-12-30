@@ -1,4 +1,7 @@
+// Available picks for computer
 const choices = ['rock', 'paper', 'scissors'];
+
+// Keep track of the score
 let userScore = 0;
 let compScore = 0;
 game();
@@ -9,10 +12,13 @@ function game() {
         playRound();
     }
     if (userScore > compScore) {
+        // If player wins
         console.log('YOU WON THE GAME!!!!!!')
     }else if (userScore < compScore) {
+        // If computer wins
         console.log('YOU LOST THE GAME :(')
     }else {
+        // If it's a tie
         console.log('Game ended in a tie');
     }
     
@@ -22,8 +28,12 @@ function game() {
 function playRound() {
     const playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
+
+    //Log the selection for player and computer
     console.log("Player picked: ", playerSelection);
     console.log("Computer picked: ", computerSelection);
+
+    //Check who won the round
     checkWinner(playerSelection, computerSelection);
 
 }
